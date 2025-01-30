@@ -1,0 +1,295 @@
+.calendar-container {
+  background-color: #1e2329;
+  padding: 2rem;
+  border-radius: 15px;
+  color: white;
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+}
+
+.calendar-left {
+  border-right: 1px solid #2d3339;
+  padding-right: 2rem;
+}
+
+.calendar-right {
+  padding-left: 1rem;
+}
+
+.calendar-header {
+  margin-bottom: 2rem;
+}
+
+.calendar-header h1 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+}
+
+.month-navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.nav-buttons button {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  margin: 0 0.5rem;
+}
+
+.calendar-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+.calendar-day-header {
+  text-align: center;
+  padding: 0.5rem;
+  font-weight: bold;
+  color: #8b8b8b;
+}
+
+.calendar-day {
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  position: relative;
+}
+
+.calendar-day:hover {
+  background-color: #2d3339;
+}
+
+.calendar-day.empty {
+  background: none;
+  cursor: default;
+}
+
+.calendar-day.has-events {
+  background-color: #0095ff;
+  color: white;
+}
+
+.calendar-day.selected {
+  border: 2px solid #00ff95;
+}
+
+.calendar-day .event-count {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  background-color: #ff3d00;
+  border-radius: 50%;
+  width: 18px;
+  height: 18px;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.events-section {
+  height: 100%;
+}
+
+.events-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.events-title {
+  font-size: 1.5rem;
+  margin: 0;
+}
+
+.add-event-btn {
+  background-color: #00ff95;
+  color: #1e2329;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background-color 0.3s;
+}
+
+.add-event-btn:hover {
+  background-color: #00cc78;
+}
+
+.events-list {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.event-item {
+  background-color: #2d3339;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: transform 0.2s;
+}
+
+.event-item:hover {
+  transform: translateX(5px);
+}
+
+.event-info {
+  flex: 1;
+}
+
+.event-time {
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.event-title {
+  font-weight: bold;
+  margin-bottom: 0.3rem;
+}
+
+.event-description {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+.event-actions {
+  display: flex;
+  gap: 5px;
+}
+
+.event-action-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.event-action-btn.edit {
+  color: #2196f3;
+}
+
+.event-action-btn.delete {
+  color: #f44336;
+}
+
+.event-action-btn:hover {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.event-action-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.loading {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+}
+
+.error-message {
+  background-color: #ffebee;
+  color: #c62828;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  border: 1px solid #ef9a9a;
+}
+
+.no-events {
+  text-align: center;
+  padding: 20px;
+  color: #666;
+  font-style: italic;
+}
+
+.event-form {
+  background-color: #2d3339;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-bottom: 1.5rem;
+}
+
+.form-group {
+  margin-bottom: 1rem;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #4a4a4a;
+  border-radius: 5px;
+  background-color: #1e2329;
+  color: white;
+  font-size: 1rem;
+}
+
+.form-group textarea {
+  resize: vertical;
+  min-height: 100px;
+}
+
+.form-actions {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.form-submit-btn {
+  background-color: #00ff95;
+  color: #1e2329;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  flex: 1;
+}
+
+.form-cancel-btn {
+  background-color: #ff3d00;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  flex: 1;
+}
+
+.form-submit-btn:disabled,
+.form-cancel-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}

@@ -1,5 +1,5 @@
 const config = {
-    mongoURI: 'mongodb://localhost:27017/communityCalendar',
+    mongoURI: 'mongodb+srv://boobalanrs2023cse:balan@cluster0.exhlx.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0/community-calender',
     port: 5000
 };
 
